@@ -41,7 +41,7 @@ task 2 is marked as checked
 
 - Javascript Basics 01-04
 - Javascript Basics 05 (Lab)
-- Install [Node.js](https://nodejs.org/)
+- Install [Node.js](https://nohdejs.org/)
 
 ## Goals:
 
