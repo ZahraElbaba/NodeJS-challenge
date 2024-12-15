@@ -145,5 +145,26 @@ if (command === "add") {
   }
 }
 
+if (command === "remove") {
+  const indexStr = cleanedInput.split(" ")[1];
+  if (!indexStr) {
+   
+    if (tasks.length > 0) {
+      const removedTask = tasks.pop();
+      console.log(`Removed task: "${removedTask}"`);
+    } else {
+      console.log("Error: No tasks to remove.");
+    }
+  } else {
+    const index = parseInt(indexStr) - 1;
+    if (isNaN(index) || index < 0 || index >= tasks.length) {
+      console.log("Error: Invalid task number.");
+    } else {
+      const removedTask = tasks.splice(index, 1);
+      console.log(`Removed task: "${removedTask}"`);
+    }
+  }
+}
+
 // The following line starts the application
 startApp("Zahra elBaba")
