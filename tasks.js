@@ -96,6 +96,16 @@ function onDataReceived(input) {
   const words = cleanedInput.split(" "); 
   const command = words[0];
 }
+if (command === "hello") {
+  if (words.length > 1) {
+    const argument = words.slice(1).join(" "); 
+    console.log(`hello ${argument}!`);
+  } else {
+    console.log("hello!");
+  }
+} else {
+  console.log("Unknown command!");
+}
 
 
 
