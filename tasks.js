@@ -116,5 +116,25 @@ if (command === "help") {
 }
 
 
+let tasks = ["Buy groceries", "Read a book", "Go for a walk"]; 
+
+function onDataReceived(input) {
+  const cleanedInput = input.trim();
+  const command = cleanedInput.split(" ")[0];
+
+  if (command === "list") {
+    if (tasks.length === 0) {
+      console.log("The task list is empty.");
+    } else {
+      tasks.forEach((task, index) => {
+        console.log(`${index + 1}. ${task}`);
+      });
+    }
+  } else {
+    console.log("Unknown command!");
+  }
+}
+
+
 // The following line starts the application
 startApp("Zahra elBaba")
