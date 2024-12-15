@@ -13,7 +13,7 @@ function startApp(name){
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
   process.stdin.on('data', onDataReceived);
-  console.log(`Welcome to zahra's application!`)
+  console.log(`⁠ Welcome to ${name}'s application! ⁠`)
   console.log("--------------------")
 }
 
@@ -34,16 +34,20 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
-  if (text === 'quit\n') {
+  if (text === 'quit'|| text==="exit") {
     quit();
   }
-  else if(text === 'hello\n'){
+  else if(text === 'hello'){
     hello();
+  }
+  else if(text==='help'){
+    help();
   }
   else{
     unknownCommand(text);
   }
 }
+
 
 
 /**
@@ -77,6 +81,14 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+function help() {
+  console.log("Available commands:");
+  console.log("hello to Offers a friendly introduction.");
+  console.log("quit or exit  to Exits the application.");
+  console.log("help  to Lists all available commands.");
+}
+
+
 
 // The following line starts the application
-startApp("Jad Sarout")
+startApp("Zahra elBaba")
