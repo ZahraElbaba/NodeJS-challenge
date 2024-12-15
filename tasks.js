@@ -88,7 +88,6 @@ function help() {
   console.log("help  to Lists all available commands.");
 }
 
-
 function onDataReceived(input) {
   console.log(`Input received: ${input}`); 
 
@@ -116,6 +115,7 @@ if (command === "help") {
 }
 
 
+
 let tasks = ["Buy groceries", "Read a book", "Go for a walk"]; 
 
 function onDataReceived(input) {
@@ -135,6 +135,15 @@ function onDataReceived(input) {
   }
 }
 
+if (command === "add") {
+  const task = cleanedInput.slice(4).trim(); // Get everything after "add"
+  if (task) {
+    tasks.push(task);
+    console.log(`Task added: "${task}"`);
+  } else {
+    console.log("Error: Task description is required.");
+  }
+}
 
 // The following line starts the application
 startApp("Zahra elBaba")
