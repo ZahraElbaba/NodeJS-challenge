@@ -107,6 +107,13 @@ if (command === "hello") {
   console.log("Unknown command!");
 }
 
+if (command === "help") {
+  console.log("Available commands:");
+  console.log("- quit: Exit the app");
+  console.log("- exit: Exit the app");
+  console.log("- help: Show this list of commands");
+  console.log('- hello [argument]: Greet the argument (e.g., "hello John"), or just say "hello!"');
+}
 
 
 // The following line starts the application
