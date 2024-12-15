@@ -89,6 +89,15 @@ function help() {
 }
 
 
+function onDataReceived(input) {
+  console.log(`Input received: ${input}`); 
+
+  const cleanedInput = input.trim(); 
+  const words = cleanedInput.split(" "); 
+  const command = words[0];
+}
+
+
 
 // The following line starts the application
 startApp("Zahra elBaba")
