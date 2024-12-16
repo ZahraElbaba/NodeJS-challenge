@@ -195,5 +195,49 @@ if (command.startsWith("add")) {
   }
 }
 
+if (command.startsWith("check")) {
+  const args = cleanedInput.split(" ");
+  if (args.length === 2) {
+    const index = parseInt(args[1]) - 1;
+    if (isNaN(index) || index < 0 || index >= tasks.length) {
+      console.log("Error: Task number does not exist.");
+    } else {
+      tasks[index].done = true;
+      console.log(`Task ${index + 1} marked as done.`);
+    }
+  } else {
+    console.log("Error: Please specify a task number.");
+  }
+}
+
+if (command.startsWith("uncheck")) {
+  const args = cleanedInput.split(" ");
+  if (args.length === 2) {
+    const index = parseInt(args[1]) - 1;
+    if (isNaN(index) || index < 0 || index >= tasks.length) {
+      console.log("Error: Task number does not exist.");
+    } else {
+      tasks[index].done = false;
+      console.log(`Task ${index + 1} marked as not done.`);
+    }
+  } else {
+    console.log("Error: Please specify a task number.");
+  }
+}
+
+if (command === "help") {
+  console.log(`
+Available commands:
+- list: List all tasks with their status.
+- add [task]: Add a new task.
+- remove [n]: Remove the nth task (or the last task if no number is provided).
+- edit [n] [new text]: Edit the nth task's text (or the last task if no number is provided).
+- check [n]: Mark the nth task as done.
+- uncheck [n]: Mark the nth task as not done.
+- quit / exit: Quit the application.
+  `);
+}
+
+
 // The following line starts the application
 startApp("Zahra elBaba")
