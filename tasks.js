@@ -166,5 +166,34 @@ if (command === "remove") {
   }
 }
 
+
+
+let tasks = [
+  { text: "Get milk", done: false },
+  { text: "Complete homework", done: true },
+  { text: "Workout", done: false },
+];
+
+if (command === "list") {
+  if (tasks.length === 0) {
+    console.log("The task list is empty.");
+  } else {
+    tasks.forEach((task, index) => {
+      const status = task.done ? "[✓]" : "[ ]";
+      console.log(`${index + 1}. ${status} ${task.text}`);
+    });
+  }
+}
+
+if (command.startsWith("add")) {
+  const taskText = cleanedInput.slice(4).trim();
+  if (taskText) {
+    tasks.push({ text: taskText, done: false });
+    console.log(`Task added: "${taskText}"`);
+  } else {
+    console.log("Error: Task description is required.");
+  }
+}
+
 // The following line starts the application
 startApp("Zahra elBaba")
